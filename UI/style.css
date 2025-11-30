@@ -1,0 +1,90 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: whitesmoke;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 700px;
+    padding: 20px;
+    background: white;
+    border: 2px solid black;
+}
+
+.window-top {
+    width: 100%;
+    border-bottom: 2px solid black;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.circles {
+    display: flex;
+    gap: 6px;
+    margin-right: 10px;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.navbar {
+    width: 100%;
+    border: 2px solid black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.content-area {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 38%;
+    grid-gap: 15px;
+}
+
+.box {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.about {
+    grid-column: 1 / 2;
+    height: 130px;
+}
+
+.services {
+    grid-column: 1 / 2;
+    height: 130px;
+}
+
+.updates {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}

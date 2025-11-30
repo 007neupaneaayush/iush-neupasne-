@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Exact Testimonial Layout</title>
+
+<style>
+  /* ====== Global ====== */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html,body { height: 100%; }
+  body {
+    background: #F7F7F7;            /* light gray page bg */
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  /* Container holding both panels */
+  .wrap {
+    width: 920px;                   /* fixed width like the photo (non-responsive) */
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* ======= Common card style ======= */
+  .card {
+    background: #FFFFFF;            /* white card background */
+    border: 2px solid #000000;      /* black 2px border */
+    border-radius: 14px;
+    padding: 18px;
+    position: relative;
+  }
+
+  /* Small round window controls on the right edge of top card */
+  .window-controls {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    display: flex;
+    gap: 8px;
+  }
+  .window-controls .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    background: #FFFFFF;
+  }
+
+  /* ======= Top Card (large horizontal) ======= */
+  .card.top {
+    height: 460px;                  /* matches image proportions */
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    padding-right: 60px;            /* extra space at right like sketch */
+  }
+
+  .left-column {
+    width: 36%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 6px;
+  }
+
+  .left-column .small-box {
+    width: 112px;
+    height: 112px;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    background: transparent;
+  }
+
+  .right-area {
+    width: 58%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* small rounded square near top-right inside the right area (arrow icon in sketch) */
+  .right-area .top-square {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 110px;
+    height: 110px;
+    border: 2px solid #000000;
+    border-radius: 20px;
+  }
+
+  /* vertical testimonial text column (centered vertically) */
+  .testimonial-vertical {
+    max-width: 64%;
+    font-size: 15px;
+    line-height: 1.55;
+    writing-mode: vertical-rl;      /* vertical text like the sketch */
+    text-orientation: mixed;
+    transform: rotate(180deg);      /* the text in the image reads bottom->top, rotate to match */
+    color: #000000;
+  }
+
+  /* ======= Bottom Card (portrait-ish rounded corners) ======= */
+  .card.bottom {
+    height: 320px;                  /* smaller than top */
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    padding: 28px;
+    gap: 30px;
+  }
+
+  .bottom-left, .bottom-right {
+    width: 36%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottom-left .big-box,
+  .bottom-right .big-box {
+    width: 240px;
+    height: 240px;
+    border: 2px solid #000000;
+    border-radius: 28px;
+    background: transparent;
+  }
+
+  .bottom-center {
+    width: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottom-center .testimonial-vertical {
+    font-size: 14px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Small label "Testimonials" placed vertically in cards like in picture */
+  .label-vertical {
+    position: absolute;
+    left: 12px;
+    top: 20px;
+    font-size: 13px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: #000000;
+  }
+
+  /* Place a small "Testimonials" label on bottom card left edge too */
+  .card.bottom .label-horizontal {
+    left: 18px;
+    top: 12px;
+  }
+
+  @media (min-width:1200px){
+    .wrap { transform: scale(1); }
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- TOP CARD -->
+    <div class="card top">
+      <div class="label-vertical">Testimonials</div>
+
+      <!-- window controls on the right edge -->
+      <div class="window-controls" aria-hidden="true">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <div class="left-column" aria-hidden="true">
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+      </div>
+
+      <div class="right-area">
+        <div class="top-square" aria-hidden="true"></div>
+
+        <!-- vertical testimonial text -->
+        <div class="testimonial-vertical">
+        </div>
+      </div>
+    </div> <!-- /.card.top -->
+
+
+    <!-- BOTTOM CARD -->
+    <div class="card bottom">
+      <div class="label-vertical">Testimonials</div>
+
+      <div class="bottom-left">
+        <div class="big-box"></div>
+      </div>
+
+      <div class="bottom-center">
+        <div class="testimonial-vertical">
+        </div>
+      </div>
+
+      <div class="bottom-right">
+        <div class="big-box"></div>
+      </div>
+    </div> <!-- /.card.bottom -->
+
+  </div> <!-- /.wrap -->
+
+</body>
+</html>
