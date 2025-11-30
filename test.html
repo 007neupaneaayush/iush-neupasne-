@@ -6,11 +6,10 @@
 <title>Exact Testimonial Layout</title>
 
 <style>
-  /* ====== Global ====== */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html,body { height: 100%; }
   body {
-    background: #F7F7F7;            /* light gray page bg */
+    background: #F7F7F7;            
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
     display: flex;
     align-items: center;
@@ -18,24 +17,20 @@
     padding: 30px;
   }
 
-  /* Container holding both panels */
   .wrap {
-    width: 920px;                   /* fixed width like the photo (non-responsive) */
+    width: 920px;                   
     display: flex;
     flex-direction: column;
     gap: 28px;
   }
-
-  /* ======= Common card style ======= */
   .card {
-    background: #FFFFFF;            /* white card background */
-    border: 2px solid #000000;      /* black 2px border */
+    background: #FFFFFF;            
+    border: 2px solid #000000;      
     border-radius: 14px;
     padding: 18px;
     position: relative;
   }
 
-  /* Small round window controls on the right edge of top card */
   .window-controls {
     position: absolute;
     right: 12px;
@@ -51,13 +46,12 @@
     background: #FFFFFF;
   }
 
-  /* ======= Top Card (large horizontal) ======= */
   .card.top {
-    height: 460px;                  /* matches image proportions */
+    height: 460px;                
     display: flex;
     gap: 26px;
     align-items: center;
-    padding-right: 60px;            /* extra space at right like sketch */
+    padding-right: 60px;           
   }
 
   .left-column {
@@ -86,7 +80,6 @@
     position: relative;
   }
 
-  /* small rounded square near top-right inside the right area (arrow icon in sketch) */
   .right-area .top-square {
     position: absolute;
     right: 18px;
@@ -97,20 +90,18 @@
     border-radius: 20px;
   }
 
-  /* vertical testimonial text column (centered vertically) */
   .testimonial-vertical {
     max-width: 64%;
     font-size: 15px;
     line-height: 1.55;
-    writing-mode: vertical-rl;      /* vertical text like the sketch */
+    writing-mode: vertical-rl;     
     text-orientation: mixed;
-    transform: rotate(180deg);      /* the text in the image reads bottom->top, rotate to match */
+    transform: rotate(180deg);      
     color: #000000;
   }
 
-  /* ======= Bottom Card (portrait-ish rounded corners) ======= */
   .card.bottom {
-    height: 320px;                  /* smaller than top */
+    height: 320px;                  
     border-radius: 26px;
     display: flex;
     align-items: center;
@@ -149,8 +140,6 @@
     max-width: 100%;
     text-align: center;
   }
-
-  /* Small label "Testimonials" placed vertically in cards like in picture */
   .label-vertical {
     position: absolute;
     left: 12px;
@@ -161,7 +150,6 @@
     color: #000000;
   }
 
-  /* Place a small "Testimonials" label on bottom card left edge too */
   .card.bottom .label-horizontal {
     left: 18px;
     top: 12px;
@@ -177,11 +165,10 @@
 
   <div class="wrap">
 
-    <!-- TOP CARD -->
+
     <div class="card top">
       <div class="label-vertical">Testimonials</div>
 
-      <!-- window controls on the right edge -->
       <div class="window-controls" aria-hidden="true">
         <div class="dot"></div>
         <div class="dot"></div>
@@ -198,14 +185,13 @@
       <div class="right-area">
         <div class="top-square" aria-hidden="true"></div>
 
-        <!-- vertical testimonial text -->
         <div class="testimonial-vertical">
         </div>
       </div>
-    </div> <!-- /.card.top -->
+    </div> 
 
 
-    <!-- BOTTOM CARD -->
+     
     <div class="card bottom">
       <div class="label-vertical">Testimonials</div>
 
@@ -221,9 +207,10 @@
       <div class="bottom-right">
         <div class="big-box"></div>
       </div>
-    </div> <!-- /.card.bottom -->
+    </div>
 
-  </div> <!-- /.wrap -->
+  </div> 
 
 </body>
+
 </html>
